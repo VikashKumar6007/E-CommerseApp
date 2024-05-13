@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Bag">
+
+    <TextView
+        android:id="@+id/et_bag"
+        android:layout_width="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:text="My Bag"
+        android:textSize="@dimen/_30ssp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_height="wrap_content"/>
+
+        <RelativeLayout
+            android:id="@+id/bag_item"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="wrap_content">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_bag"
+                android:layout_marginTop="@dimen/_60sdp"
+                android:layout_width="match_parent"
+                android:layout_alignParentTop="true"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:listitem="@layout/bag_items"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_height="wrap_content">
+            </androidx.recyclerview.widget.RecyclerView>
+        </RelativeLayout>
+
+
+    <EditText
+        android:id="@+id/et_promo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/bag_item"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:hint="Enter your promo code"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/edit_text"
+        android:padding="@dimen/_6sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        />
+    <TextView
+        android:id="@+id/total_amnt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:text="Total Amount:"
+        android:layout_marginTop="@dimen/_12sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="@dimen/_20sdp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        />
+
+    <android.widget.Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:background="@drawable/btn"
+        android:text="Check Out"
+        android:textColor="@color/white"
+        android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginRight="@dimen/_30sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="39dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
