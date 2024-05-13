@@ -2,18 +2,13 @@ package com.example.e_commerce
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager.widget.ViewPager
 import com.example.e_commerce.databinding.ActivityMainBinding
-import com.google.android.material.tabs.TabLayout
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding:ActivityMainBinding
-
+    private val TAG : String = "Check"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,4 +38,11 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.replace(R.id.frame_layout,fragment)
         fragmentTransaction.commit()
     }
+
+
+
+
+
+
+
 }
