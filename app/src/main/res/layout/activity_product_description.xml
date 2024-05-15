@@ -25,48 +25,22 @@
 
     <LinearLayout
         android:id="@+id/sizebar"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:background="@drawable/spinner"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_10sdp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_20sdp"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/view">
+        <Spinner
+            android:id="@+id/spinner_view"
+            android:layout_height="60dp"
+            android:layout_width="160dp"
+            tools:listitem="@layout/menu_list"
+            android:backgroundTint="#514F4F"
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/btn_size"
-            android:layout_width="@dimen/_80sdp"
-            android:layout_height="@dimen/_40sdp"
-            android:layout_margin="@dimen/_10sdp"
-            android:hint="@string/Quantity"
-            android:textStyle="bold"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-
-            >
-
-            <AutoCompleteTextView
-                android:id="@+id/auto_complet"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_5sdp"
-                android:inputType="none" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-<!--        <com.google.android.material.textfield.TextInputLayout-->
-
-<!--            android:layout_width="@dimen/_80sdp"-->
-<!--            android:layout_height="@dimen/_40sdp"-->
-<!--            android:layout_margin="@dimen/_10sdp"-->
-<!--            android:hint="Color"-->
-<!--            android:textStyle="bold"-->
-<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"-->
-<!--            >-->
-
-<!--            <AutoCompleteTextView-->
-<!--                android:id="@+id/auto_complet_color"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginLeft="@dimen/_5sdp"-->
-<!--                android:inputType="none" />-->
-
-<!--        </com.google.android.material.textfield.TextInputLayout>-->
+            android:layout_marginTop="@dimen/_5sdp"/>
 
     </LinearLayout>
 
@@ -93,18 +67,6 @@
             android:textSize="@dimen/_16ssp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent" />
-        <!--        <TextView-->
-        <!--            android:layout_marginTop="@dimen/_10sdp"-->
-        <!--            android:id="@+id/price"-->
-        <!--            android:textDirection="rtl"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:text="Price "-->
-        <!--            android:textSize="@dimen/_20ssp"-->
-        <!--            android:textStyle="bold"-->
-        <!--            android:textColor="@color/black"-->
-        <!--            android:layout_marginLeft="@dimen/_100sdp"-->
-        <!--            />-->
     </LinearLayout>
 <LinearLayout
     android:id="@+id/text_layout"
