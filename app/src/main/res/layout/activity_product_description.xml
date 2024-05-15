@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProductDescriptionActivity">
+    <ImageView
+        android:id="@+id/details_img"
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="fitXY"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/fav_pic2"
+        android:layout_height="@dimen/_300sdp"/>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#878484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/details_img" />
+
+    <LinearLayout
+        android:id="@+id/sizebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/view">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/btn_size"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:hint="@string/Quantity"
+            android:textStyle="bold"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+
+            >
+
+            <AutoCompleteTextView
+                android:id="@+id/auto_complet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:inputType="none" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+
+<!--            android:layout_width="@dimen/_80sdp"-->
+<!--            android:layout_height="@dimen/_40sdp"-->
+<!--            android:layout_margin="@dimen/_10sdp"-->
+<!--            android:hint="Color"-->
+<!--            android:textStyle="bold"-->
+<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"-->
+<!--            >-->
+
+<!--            <AutoCompleteTextView-->
+<!--                android:id="@+id/auto_complet_color"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="@dimen/_5sdp"-->
+<!--                android:inputType="none" />-->
+
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/price_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/sizebar">
+
+        <TextView
+            android:id="@+id/product_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="Product details "
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16ssp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent" />
+        <!--        <TextView-->
+        <!--            android:layout_marginTop="@dimen/_10sdp"-->
+        <!--            android:id="@+id/price"-->
+        <!--            android:textDirection="rtl"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="Price "-->
+        <!--            android:textSize="@dimen/_20ssp"-->
+        <!--            android:textStyle="bold"-->
+        <!--            android:textColor="@color/black"-->
+        <!--            android:layout_marginLeft="@dimen/_100sdp"-->
+        <!--            />-->
+    </LinearLayout>
+<LinearLayout
+    android:id="@+id/text_layout"
+    app:layout_constraintTop_toBottomOf="@id/price_layout"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Products"
+        android:textSize="@dimen/_14ssp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        />
+    <RatingBar
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        />
+
+</LinearLayout>
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@+id/text_layout"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:id="@+id/desc_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Product description "
+        android:textSize="@dimen/_10ssp"
+        android:lineSpacingExtra="@dimen/_5sdp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

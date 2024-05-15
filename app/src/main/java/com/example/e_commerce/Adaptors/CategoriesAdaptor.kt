@@ -1,14 +1,13 @@
-package com.example.e_commerce
+package com.example.e_commerce.Adaptors
 
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.card.MaterialCardView
-import com.google.android.material.imageview.ShapeableImageView
+import com.example.e_commerce.DataClass.CategoriesDataClass
+import com.example.e_commerce.R
 
 
 class  CategoriesAdaptor(private val categorielist :ArrayList<CategoriesDataClass>):RecyclerView.Adapter<CategoriesAdaptor.CategoriesAdaptor>() {

@@ -1,11 +1,12 @@
-package com.example.e_commerce
+package com.example.e_commerce.Adaptors
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.card.MaterialCardView
+import com.example.e_commerce.R
+import com.example.e_commerce.DataClass.favList
 
 class FavoritesAdaptor(private val favroitsList: ArrayList<favList>):RecyclerView.Adapter<FavoritesAdaptor.FavoritesAdaptor>() {
 

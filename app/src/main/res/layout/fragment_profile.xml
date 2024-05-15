@@ -35,7 +35,7 @@
                 android:id="@+id/profile_image"
                 android:layout_width="96dp"
                 android:layout_height="96dp"
-                android:src="@drawable/fav_pic4"
+                android:src="@drawable/fav_pic2"
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_below="@+id/et_myProfile"

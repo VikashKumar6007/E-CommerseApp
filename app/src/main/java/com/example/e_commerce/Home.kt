@@ -1,78 +1,92 @@
 package com.example.e_commerce
 
+import Product
 import ProductsResp
+import android.app.Activity
+import android.content.Intent
+import android.opengl.Visibility
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.text.style.ClickableSpan
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.e_commerce.apiServices.Api
+import com.example.e_commerce.Adaptors.MyListAdaptor
 import com.example.e_commerce.apiServices.ApiClient
 import com.example.e_commerce.databinding.FragmentHomeBinding
+import kotlinx.coroutines.NonDisposableHandle.parent
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import kotlin.math.log
 
 
 class Home : Fragment() {
     private lateinit var binding: FragmentHomeBinding
-   private lateinit var newRecyclerView: RecyclerView
-    private val TAG : String = "Check"
-    private lateinit var newArrayList: ArrayList<ItemList>
+    private lateinit var newRecyclerView: RecyclerView
+    private val TAG: String = "Check"
+    private var newArrayList: ArrayList<Product> = ArrayList()
     override fun onCreateView(
 
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
-
-        newRecyclerView = binding.recyclerId
-        newArrayList = ArrayList()
-
-
-        newArrayList.add(ItemList(R.drawable.image))
-        newArrayList.add(ItemList(R.drawable.men))
-        newArrayList.add(ItemList(R.drawable.pic3))
-        newArrayList.add(ItemList(R.drawable.home))
-
-        newRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-        newRecyclerView.adapter = MyListAdaptor(newArrayList)
-         getAllComments()
+        getProducts()
         return binding.root
+
     }
-    private fun getAllComments(){
+
+    private fun setRecy() {
+        newRecyclerView = binding.recyclerId
+        newRecyclerView.layoutManager = GridLayoutManager(this@Home.requireActivity(), 2, LinearLayoutManager.VERTICAL, false)
+        newRecyclerView.adapter = MyListAdaptor(newArrayList)
+
+
+    }
+
+    private fun getProducts() {
+        binding.progress.progcc.visibility = View.VISIBLE
 
         var api = ApiClient.api().getApi()
 
         api.enqueue(object : Callback<ProductsResp> {
             override fun onResponse(call: Call<ProductsResp>, response: Response<ProductsResp>) {
-                if(response.isSuccessful){
+                if (response.isSuccessful) {
 
                     var list = response.body()
 
-                    Log.e("TAG",list.toString())
+                    newArrayList = list?.products as ArrayList<Product>
+                    Log.d("LIST", newArrayList.size.toString())
 
-                }else{
+
+                    Handler(Looper.getMainLooper()).postDelayed({
+                        binding.progress.progcc.visibility = View.GONE
+                        setRecy()
+
+                    }, 3000)
+
+                    Log.e("TAG", list.toString())
+
+                } else {
                     Log.e(TAG, "Error: ${response.code()}")
+                    binding.progress.progcc.visibility = View.GONE
+
                 }
             }
 
             override fun onFailure(call: Call<ProductsResp>, t: Throwable) {
                 Log.i(TAG, "onFailure: ${t.message}")
+                binding.progress.progcc.visibility = View.GONE
             }
 
         })
-
-
-
-
-
 
     }
 

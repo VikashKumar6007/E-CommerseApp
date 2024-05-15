@@ -1,84 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="horizontal"
     tools:context=".Home">
 
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
+
 
             <LinearLayout
                 android:id="@+id/linear_home"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <ImageView
                     android:layout_width="match_parent"
-                    android:src="@drawable/home"
+                    android:layout_height="match_parent"
                     android:scaleType="fitXY"
-                    android:layout_height="match_parent"/>
+                    android:src="@drawable/home" />
             </LinearLayout>
+
             <TextView
+                android:id="@+id/fashion_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fashion\n sale"
-                android:textColor="@color/white"
-                android:textStyle="bold"
                 android:layout_marginLeft="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_250sdp"
+                android:text="Fashion\n sale"
+                android:textColor="@color/white"
                 android:textSize="@dimen/_40ssp"
-                />
+                android:textStyle="bold" />
+            <include
+                android:id="@+id/progress"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/fashion_text"
+                android:layout_above="@+id/newcollection"
+                layout="@layout/progressbar" />
+
             <LinearLayout
                 android:id="@+id/text_linear"
                 android:layout_width="match_parent"
-                android:layout_below="@+id/linear_home"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linear_home">
 
                 <TextView
                     android:id="@+id/id_new"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="New"
-                    android:textStyle="bold"
                     android:layout_marginLeft="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_10sdp"
+                    android:text="New"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_20ssp"/>
+                    android:textSize="@dimen/_20ssp"
+                    android:textStyle="bold" />
+
             </LinearLayout>
+
             <TextView
-                android:layout_below="@id/text_linear"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="@dimen/_10sdp"
-                android:textStyle="italic"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/text_linear"
+                android:layout_marginLeft="@dimen/_10sdp"
                 android:text="You've never seen it before"
+                android:textStyle="italic"
 
                 />
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_below="@+id/text_linear"
-    android:orientation="horizontal"
-    android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_Id"
-        android:layout_marginTop="@dimen/_15sdp"
-        android:layout_below="@+id/text_linear"
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        tools:listitem="@layout/list_item"
-        android:layout_height="wrap_content">
 
-    </androidx.recyclerview.widget.RecyclerView>
-</LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/newcollection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_linear"
+                android:orientation="horizontal">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_Id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_linear"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:orientation="vertical"
+                    tools:listitem="@layout/list_item">
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </LinearLayout>
 
 
         </RelativeLayout>
 
+    </ScrollView>
 
 
-
-</ScrollView>
+</RelativeLayout>

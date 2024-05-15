@@ -7,8 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.e_commerce.Adaptors.CategoriesAdaptor
+import com.example.e_commerce.DataClass.CategoriesDataClass
 import com.example.e_commerce.databinding.FragmentShopBinding
-import com.google.android.material.tabs.TabLayout
 
 
 class Shop : Fragment() {
@@ -33,6 +34,9 @@ class Shop : Fragment() {
 
         newRecyclerView.layoutManager = LinearLayoutManager(requireContext())
        newRecyclerView.adapter = CategoriesAdaptor(newArrayList)
+
+        binding.backLay.backBtn
+
         return binding.root
     }
 

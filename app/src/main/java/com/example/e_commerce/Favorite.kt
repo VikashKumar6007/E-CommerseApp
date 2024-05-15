@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.e_commerce.Adaptors.FavoritesAdaptor
+import com.example.e_commerce.DataClass.favList
 import com.example.e_commerce.databinding.FragmentFavoriteBinding
 
 class Favorite : Fragment() {

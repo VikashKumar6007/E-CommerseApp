@@ -5,9 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.e_commerce.Adaptors.BagItem
+import com.example.e_commerce.DataClass.bag_item
 import com.example.e_commerce.databinding.FragmentBagBinding
 
 class Bag : Fragment() {
