@@ -61,16 +61,12 @@ class Home : Fragment() {
                     var list = response.body()
 
                     newArrayList = list?.products as ArrayList<Product>
-                    Log.d("LIST", newArrayList.size.toString())
-
 
                     Handler(Looper.getMainLooper()).postDelayed({
                         binding.progress.progcc.visibility = View.GONE
                         setRecy()
 
                     }, 3000)
-
-                    Log.e("TAG", list.toString())
 
                 } else {
                     Log.e(TAG, "Error: ${response.code()}")
