@@ -2,26 +2,23 @@ package com.example.e_commerce
 
 import Product
 import ProductsResp
-import android.app.Activity
-import android.content.Intent
-import android.opengl.Visibility
+
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.text.style.ClickableSpan
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isVisible
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.e_commerce.Adaptors.MyListAdaptor
 import com.example.e_commerce.apiServices.ApiClient
 import com.example.e_commerce.databinding.FragmentHomeBinding
-import kotlinx.coroutines.NonDisposableHandle.parent
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -30,6 +27,7 @@ import retrofit2.Response
 class Home : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var newRecyclerView: RecyclerView
+
     private val TAG: String = "Check"
     private var newArrayList: ArrayList<Product> = ArrayList()
     override fun onCreateView(

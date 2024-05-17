@@ -1,25 +1,37 @@
 package com.example.e_commerce
 
 
-import android.content.Context
-import android.graphics.Color
+import Product
+
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
+
 import android.widget.AdapterView.OnItemSelectedListener
 import android.widget.ArrayAdapter
 import android.widget.Spinner
-import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
+
+import androidx.recyclerview.widget.RecyclerView
+
+import com.example.e_commerce.apiServices.ApiClient
 import com.example.e_commerce.databinding.ActivityProductDescriptionBinding
 import com.squareup.picasso.Picasso
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class ProductDescriptionActivity : AppCompatActivity() {
 
-
     private lateinit var binding:ActivityProductDescriptionBinding
+    private lateinit var newRecyclerView: RecyclerView
+    private  var newArrayList: ArrayList<Product> = ArrayList()
+    private val TAG: String = "Check"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityProductDescriptionBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
@@ -31,24 +43,42 @@ class ProductDescriptionActivity : AppCompatActivity() {
 
         spinner.onItemSelectedListener = object : OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
-                Toast.makeText(this@ProductDescriptionActivity,list[position],Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this@ProductDescriptionActivity,list[position],Toast.LENGTH_SHORT).show()
             }
             override fun onNothingSelected(p0: AdapterView<*>?) {
                 TODO("Not yet implemented")
             }
         }
 
-            val title = intent.getStringExtra("name")
-            val imageUrl = intent.getStringExtra("images")
-            val desc = intent.getStringExtra("description")
-            val rating = intent.getFloatExtra("rating", 3F)
+        getProducts()
 
+    }
+    private fun getProducts() {
 
-            binding.productId.text = title.toString()
-             binding.descId.text = desc.toString()
-            Picasso.get().load(imageUrl).into(binding.detailsImg)
-            binding.rating.rating = rating
+        val id = intent.getIntExtra("id",1)
 
+        var api = ApiClient.api().getPostApi(id)
+
+        api.enqueue(object : Callback<Product> {
+            override fun onResponse(call: Call<Product>, response: Response<Product>) {
+                if (response.isSuccessful) {
+
+                    binding.prodDesc.desc.text = response.body()?.description
+                    binding.prodDesc.productId.text = response.body()?.brand
+                    Picasso.get().load(response.body()?.thumbnail).into(binding.prodDesc.detailsImg)
+                    binding.prodDesc.etPrice.text = response.body()?.price.toString()
+
+                } else {
+                    Log.e(TAG, "Error: ${response.code()}")
+
+                }
+            }
+
+            override fun onFailure(call: Call<Product>, t: Throwable) {
+                Log.i(TAG, "onFailure: ${t.message}")
+            }
+
+        })
 
     }
 

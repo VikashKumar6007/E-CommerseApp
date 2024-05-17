@@ -4,11 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_marginTop="@dimen/_20sdp"
     tools:context=".SignUp">
     <LinearLayout
         android:id="@+id/linear_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
         <include layout="@layout/backbtn_lay"/>
 
@@ -16,9 +23,9 @@
 
     <TextView
         android:id="@+id/et_sign_up"
-                app:layout_constraintTop_toBottomOf="@+id/linear_back"
+        app:layout_constraintTop_toBottomOf="@+id/linear_back"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/_20sdp"
         android:text="Sign up"
         android:textColor="@color/black"
         android:textStyle="bold"
@@ -39,13 +46,14 @@
             android:background="@drawable/edit_text"
             android:layout_marginLeft="@dimen/_30sdp"
             android:layout_marginRight="@dimen/_30sdp"
+            android:digits="zxcvbnmlkjhgfdsaqwertyuiopZXCVBNMLKJHGFDSAQWERTYUIOP"
             android:hint="Name:"
             android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
         <EditText
-            android:id="@+id/et_email"
+            android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text"
@@ -55,10 +63,10 @@
             android:hint="Email "
             android:inputType="textEmailAddress"
             android:layout_below="@+id/et_name"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="@dimen/_15sdp"
             />
         <EditText
-            android:id="@+id/et_password"
+            android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text"
@@ -67,7 +75,7 @@
             android:layout_marginLeft="@dimen/_30sdp"
             android:hint="Password "
             android:inputType="textPassword"
-            android:layout_below="@+id/et_email"
+            android:layout_below="@+id/etEmail"
             android:layout_marginTop="@dimen/_15sdp"
             />
 
@@ -123,16 +131,16 @@
             <ImageView
                 android:id="@+id/google"
                 android:src="@drawable/google"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
                 android:layout_marginStart="@dimen/_120sdp"
                 />
 
             <ImageView
                 android:id="@+id/fb"
                 android:src="@drawable/fb_icon"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
                 android:layout_marginStart="@dimen/_160sdp"
                 />
 

@@ -36,7 +36,7 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/et_email"
+            android:id="@+id/et_sign_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text"
@@ -48,7 +48,7 @@
             android:layout_marginTop="@dimen/_15sdp"
             />
         <EditText
-            android:id="@+id/et_password"
+            android:id="@+id/et_sign_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text"
@@ -57,7 +57,7 @@
             android:layout_marginLeft="@dimen/_30sdp"
             android:hint="Password "
             android:inputType="textPassword"
-            android:layout_below="@+id/et_email"
+            android:layout_below="@+id/et_sign_email"
             android:layout_marginTop="@dimen/_15sdp"
             />
 
@@ -75,7 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <android.widget.Button
-        android:id="@+id/btn_sign_up"
+        android:id="@+id/btn_login_in"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/btn"
@@ -91,7 +91,7 @@
         android:id="@+id/et_or"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/btn_sign_up"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login_in"
         android:text="Or sign up with social account"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"

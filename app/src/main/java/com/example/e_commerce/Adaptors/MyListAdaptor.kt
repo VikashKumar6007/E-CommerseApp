@@ -2,7 +2,7 @@ package com.example.e_commerce.Adaptors
 
 import Product
 import android.content.Intent
-import android.graphics.Bitmap
+
 
 import android.view.LayoutInflater
 import android.view.View
@@ -37,13 +37,14 @@ class MyListAdaptor(private val itemlist : ArrayList<Product>) :RecyclerView.Ada
         holder.ratingBar.rating = currentItem.rating.toFloat()
         holder.price.text = currentItem.price.toString()
 
+
         holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context, ProductDescriptionActivity::class.java)
             intent.putExtra("name",itemlist[position].title)
             intent.putExtra("images",itemlist[position].thumbnail)
             intent.putExtra("description",itemlist[position].description)
             intent.putExtra("rating",itemlist[position].rating)
-
+            intent.putExtra("id",itemlist[position].id)
             holder.itemView.context.startActivity(intent)
 
         }
@@ -52,6 +53,7 @@ class MyListAdaptor(private val itemlist : ArrayList<Product>) :RecyclerView.Ada
     }
     class MyListAdaptor(itemView : View): RecyclerView.ViewHolder(itemView){
         val titleImage : ShapeableImageView = itemView.findViewById(R.id.title_image)
+
         val desc :TextView = itemView.findViewById(R.id.productDescriptionTextView)
         val title:TextView = itemView.findViewById(R.id.productNameTextView)
         val ratingBar:RatingBar = itemView.findViewById(R.id.rating_list)

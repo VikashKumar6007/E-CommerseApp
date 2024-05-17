@@ -72,7 +72,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/profile_image"
-                android:layout_marginTop="@dimen/_50sdp"
+                android:layout_marginTop="@dimen/_30sdp"
                 android:orientation="vertical">
 
                 <TextView
@@ -157,6 +157,17 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/_10sdp"
                     android:text="Notification , Password" />
+
+                <android.widget.Button
+                    android:id="@+id/btn_Sign_Out"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:background="@drawable/product_btn"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Sign out"
+                    android:textColor="@color/black"
+                    />
 
             </LinearLayout>
 
