@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import com.example.e_commerce.databinding.FragmentProfileBinding
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
@@ -16,6 +18,7 @@ class Profile : Fragment() {
   private lateinit var binding: FragmentProfileBinding
   private lateinit var firebaseAuth: FirebaseAuth
   private lateinit var sharedPreferences: SharedPreferences
+  lateinit var webView:WebView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,12 +30,16 @@ class Profile : Fragment() {
         sharedPreferences = requireContext().getSharedPreferences("loginPrefs", Context.MODE_PRIVATE)
 
 
+        binding.etSetting.setOnClickListener {
+           val intent = Intent(requireContext(),com.example.e_commerce.WebView::class.java)
+            startActivity(intent)
+        }
 
         binding.btnSignOut.setOnClickListener {
            signOut()
-
-
         }
+
+
 
         return binding.root
     }
