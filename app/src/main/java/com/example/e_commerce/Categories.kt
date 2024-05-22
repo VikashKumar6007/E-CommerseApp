@@ -2,7 +2,6 @@ package com.example.e_commerce
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentStateManagerControl
 import androidx.fragment.app.FragmentStatePagerAdapter
 
 class Categories(fm : FragmentManager): FragmentStatePagerAdapter(fm,

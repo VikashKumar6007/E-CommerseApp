@@ -3,6 +3,7 @@ package com.example.e_commerce
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -31,8 +32,12 @@ class Profile : Fragment() {
 
 
         binding.etSetting.setOnClickListener {
-           val intent = Intent(requireContext(),com.example.e_commerce.WebView::class.java)
-            startActivity(intent)
+            val url = "https://www.google.com"
+            val urlIntent = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse(url)
+            )
+            startActivity(urlIntent)
         }
 
         binding.btnSignOut.setOnClickListener {

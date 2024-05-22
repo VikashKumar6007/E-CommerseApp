@@ -22,7 +22,7 @@
             <ImageView
                 android:id="@+id/bag_img"
                 android:layout_width="wrap_content"
-                android:src="@drawable/new_imagepng"
+                android:src="@drawable/fav_pic2"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentTop="true"
                 android:scaleType="fitXY"

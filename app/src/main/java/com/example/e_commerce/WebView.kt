@@ -10,11 +10,11 @@ class WebView : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_web_view)
-        webView = findViewById<WebView>(R.id.webView) as WebView
-        webView.loadUrl("https://www.google.com")
-        webView.settings.javaScriptEnabled=(true)
-
-        webView.webViewClient= WebViewClient()
-        webView.settings.setSupportZoom(true)
+//        webView = findViewById<WebView>(R.id.webView) as WebView
+//        webView.loadUrl("https://www.google.com")
+//        webView.settings.javaScriptEnabled=(true)
+//
+//        webView.webViewClient= WebViewClient()
+//        webView.settings.setSupportZoom(true)
     }
 }

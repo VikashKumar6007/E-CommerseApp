@@ -20,6 +20,4 @@ object ApiClient {
 
         return api
     }
-
-
 }

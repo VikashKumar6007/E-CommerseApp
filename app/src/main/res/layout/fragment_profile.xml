@@ -150,7 +150,7 @@
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:textSize="@dimen/_14ssp"
-                    android:text="Settings\nWebView"
+                    android:text="Settings"
                     />
 
                 <TextView

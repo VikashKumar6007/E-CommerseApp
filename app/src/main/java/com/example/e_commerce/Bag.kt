@@ -28,7 +28,7 @@ class Bag : Fragment() {
         newRecyclerView = binding.recyclerBag
         newArrayList = ArrayList()
 
-        newArrayList.add(bag_item(R.drawable.new_imagepng))
+        newArrayList.add(bag_item(R.drawable.fav_pic2))
         newArrayList.add(bag_item(R.drawable.bag_pic))
 
 
